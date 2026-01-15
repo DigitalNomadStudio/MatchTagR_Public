@@ -365,6 +365,49 @@
             font-size: 0.95rem;
         }
 
+        /* Why Choose Cards */
+        .benefit-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(61, 214, 79, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            filter: grayscale(0.3);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .benefit-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -647,29 +690,29 @@
         </section>
 
         <!-- Why Choose Section -->
-        <section class="features-section" style="padding-top: 50px;">
+        <section class="features-section" style="padding-top: 50px; padding-bottom: 60px;">
             <h2 class="section-title">Why Choose MatchTagR?</h2>
-            <div style="max-width: 900px; margin: 0 auto;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 15px;">⚡</div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--text-main);">Lightning Fast</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Tag events in milliseconds without taking your eyes off the game</p>
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">⚡</span>
+                        <h3 class="benefit-title">Lightning Fast</h3>
+                        <p class="benefit-description">Tag events in milliseconds without taking your eyes off the game. Designed for speed and accuracy.</p>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 15px;">📱</div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--text-main);">Works Offline</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">No internet required. Perfect for fields with poor connectivity</p>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">📱</span>
+                        <h3 class="benefit-title">Works Offline</h3>
+                        <p class="benefit-description">No internet required. Perfect for fields with poor connectivity. All processing happens on your device.</p>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 15px;">🔒</div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--text-main);">Your Data, Your Device</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">All videos and data stay on your phone. Complete privacy</p>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🔒</span>
+                        <h3 class="benefit-title">Your Data, Your Device</h3>
+                        <p class="benefit-description">All videos and data stay on your phone. Complete privacy. No cloud storage, no tracking.</p>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 15px;">💰</div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--text-main);">One-Time Purchase</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">No subscriptions. Buy once, use forever</p>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">💰</span>
+                        <h3 class="benefit-title">One-Time Purchase</h3>
+                        <p class="benefit-description">No subscriptions. Buy once, use forever. Free 14-day trial to test all Pro features.</p>
                     </div>
                 </div>
             </div>
