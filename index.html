@@ -146,11 +146,19 @@
             transform: translateY(-2px);
         }
 
-        /* Phone Mockup Placeholder */
+        /* Phone Mockup Carousel */
         .mockup-container {
             position: relative;
             display: flex;
             justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            z-index: 2;
         }
 
         .phone-frame {
@@ -162,25 +170,101 @@
             box-shadow: 0 50px 100px -20px rgba(0,0,0,0.8);
             overflow: hidden;
             position: relative;
-            z-index: 2;
         }
 
-        /* This is where your screenshot goes */
-        .app-screen {
+        .carousel-container {
+            position: relative;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
-            color: #555;
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
         }
         
-        .app-screen img {
+        .carousel-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .carousel-slide.placeholder {
+            color: #555;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(61, 214, 79, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: -50px;
+        }
+
+        .carousel-nav.next {
+            right: -50px;
+        }
+
+        /* Carousel Dots */
+        .carousel-dots {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: var(--primary);
+            width: 24px;
+            border-radius: 4px;
         }
 
         .blob {
@@ -307,9 +391,27 @@
                 margin-top: 20px;
             }
             
+            .carousel-wrapper {
+                width: 260px;
+                height: 500px;
+            }
+            
             .phone-frame {
                 height: 500px;
                 width: 260px;
+            }
+
+            .carousel-nav.prev {
+                left: -15px;
+            }
+
+            .carousel-nav.next {
+                right: -15px;
+            }
+
+            .carousel-nav {
+                width: 35px;
+                height: 35px;
             }
         }
     </style>
@@ -341,10 +443,48 @@
 
             <div class="mockup-container">
                 <div class="blob"></div>
-                <div class="phone-frame">
-                    <div class="app-screen">
-                        <img src="YOUR_SCREENSHOT_HERE.jpg" alt="MatchTagR App Interface" onerror="this.style.display='none'; this.parentNode.innerHTML='<h3 style=\'color:white; padding:20px; text-align:center\'>Add App Screenshot Here</h3>'">
+                <div class="carousel-wrapper">
+                    <div class="phone-frame">
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="carouselTrack">
+                                <!-- Slide 1 -->
+                                <div class="carousel-slide">
+                                    <img src="screenshots/screenshot1.png" alt="MatchTagR Home Screen" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.parentElement.innerHTML='<h3>Home Screen</h3><p>Add screenshot1.png</p>'">
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="carousel-slide">
+                                    <img src="screenshots/screenshot2.png" alt="Live Tag Match" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.parentElement.innerHTML='<h3>Live Tag Match</h3><p>Add screenshot2.png</p>'">
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="carousel-slide">
+                                    <img src="screenshots/screenshot3.png" alt="Video Tag Mode" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.parentElement.innerHTML='<h3>Video Tag Mode</h3><p>Add screenshot3.png</p>'">
+                                </div>
+                                <!-- Slide 4 -->
+                                <div class="carousel-slide">
+                                    <img src="screenshots/screenshot4.png" alt="Record & Tag" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.parentElement.innerHTML='<h3>Record & Tag</h3><p>Add screenshot4.png</p>'">
+                                </div>
+                                <!-- Slide 5 -->
+                                <div class="carousel-slide">
+                                    <img src="screenshots/screenshot5.png" alt="Event Timeline" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.parentElement.innerHTML='<h3>Event Timeline</h3><p>Add screenshot5.png</p>'">
+                                </div>
+                                <!-- Slide 6 -->
+                                <div class="carousel-slide">
+                                    <img src="screenshots/screenshot6.png" alt="Highlight Reels" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'; this.parentElement.innerHTML='<h3>Highlight Reels</h3><p>Add screenshot6.png</p>'">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-nav prev" onclick="moveCarousel(-1)" aria-label="Previous screenshot">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="carousel-nav next" onclick="moveCarousel(1)" aria-label="Next screenshot">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                    
+                    <!-- Dots Indicator -->
+                    <div class="carousel-dots" id="carouselDots"></div>
                 </div>
             </div>
         </section>
@@ -455,5 +595,79 @@
             <p>&copy; 2024-2026 MatchTagR. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const totalSlides = 6;
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'carousel-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            
+            // Loop around
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => {
+            moveCarousel(1);
+        }, 5000);
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const carouselContainer = document.querySelector('.carousel-container');
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                moveCarousel(1); // Swipe left
+            }
+            if (touchEndX > touchStartX + 50) {
+                moveCarousel(-1); // Swipe right
+            }
+        }
+    </script>
 </body>
 </html>
