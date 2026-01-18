@@ -2,322 +2,304 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Support - MatchTagR</title>
-    <meta name="description" content="Get help and support for MatchTagR - FAQs, contact information, and troubleshooting.">
-    <meta name="theme-color" content="#3DD64F">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TagR - Support</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --tagr-green: #3DD64F;
-            --bg-dark: #0A0A0A;
-            --bg-card: #141414;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B0B0B0;
-            --text-muted: #707070;
-        }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.7;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
         }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(61, 214, 79, 0.1);
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #FFFFFF 0%, #3DD64F 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-        }
-
-        .back-link {
-            color: var(--tagr-green);
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        .back-link:hover {
-            opacity: 0.8;
-        }
-
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 6rem 2rem 4rem;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
+        
         h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            color: #3DD64F;
+            margin-bottom: 10px;
+            font-size: 2.5em;
         }
-
-        .intro {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
+        
+        .tagline {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
         }
-
+        
         h2 {
-            font-size: 1.8rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--tagr-green);
+            color: #3DD64F;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
         }
-
-        .faq-item {
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(61, 214, 79, 0.1);
-            margin-bottom: 1rem;
-            transition: all 0.3s;
+        
+        h3 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
         }
-
-        .faq-item:hover {
-            border-color: var(--tagr-green);
-            box-shadow: 0 5px 20px rgba(61, 214, 79, 0.1);
+        
+        p {
+            margin-bottom: 15px;
+            color: #555;
         }
-
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
         }
-
-        .faq-answer {
-            color: var(--text-secondary);
-            line-height: 1.7;
+        
+        li {
+            margin-bottom: 8px;
+            color: #555;
         }
-
-        .faq-answer ul {
-            margin-left: 1.5rem;
-            margin-top: 0.8rem;
+        
+        .feature-box {
+            background-color: #f0f9f1;
+            padding: 20px;
+            border-left: 4px solid #3DD64F;
+            margin: 20px 0;
+            border-radius: 4px;
         }
-
-        .faq-answer li {
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-section {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 2px solid rgba(61, 214, 79, 0.2);
-            margin-top: 4rem;
+        
+        .contact-box {
+            background-color: #3DD64F;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
             text-align: center;
+            margin-top: 40px;
         }
-
-        .contact-section h2 {
+        
+        .contact-box h2 {
+            color: white;
             margin-top: 0;
-            margin-bottom: 1rem;
         }
-
-        .contact-section p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+        
+        .contact-box p {
+            color: white;
+            font-size: 1.1em;
         }
-
-        .contact-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
+        
+        .button {
             display: inline-block;
+            background-color: white;
+            color: #3DD64F;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.2s;
         }
-
-        .contact-btn-primary {
-            background: var(--tagr-green);
-            color: var(--bg-dark);
-        }
-
-        .contact-btn-primary:hover {
-            background: #2FB83E;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(61, 214, 79, 0.3);
-        }
-
-        .contact-btn-secondary {
-            background: transparent;
-            color: var(--tagr-green);
-            border: 2px solid var(--tagr-green);
-        }
-
-        .contact-btn-secondary:hover {
-            background: var(--tagr-green);
-            color: var(--bg-dark);
+        
+        .button:hover {
             transform: translateY(-2px);
         }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
+        
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(61, 214, 79, 0.3);
+        }
+        
+        @media (max-width: 600px) {
             .container {
-                padding: 5rem 1.5rem 3rem;
+                padding: 20px;
             }
-
+            
             h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .faq-item {
-                padding: 1.25rem;
-            }
-
-            .faq-question {
-                font-size: 1.1rem;
-            }
-
-            .contact-section {
-                padding: 2rem 1.5rem;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-            }
-
-            .contact-btn {
-                width: 100%;
-                text-align: center;
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">MatchTagR</a>
-        <a href="index.html" class="back-link">← Back to Home</a>
-    </nav>
-
     <div class="container">
-        <h1>Support</h1>
-        <p class="intro">Need help with MatchTagR? Find answers to common questions below or contact us directly.</p>
-
+        <h1>MatchTagR</h1>
+        <p class="tagline">Capture Game Moments</p>
+        
+        <p>Welcome to <strong>MatchTagR</strong>, the professional match tagging app for coaches, scouts, and parents. Tag events live, sync with video, or record while you tag.</p>
+        
+        <h2>About MatchTagR</h2>
+        <p>MatchTagR offers three powerful modes to capture and analyze match events. Whether you're tagging live, reviewing footage, or recording the match yourself, MatchTagR has you covered.</p>
+        
+        <div class="feature-box">
+            <h3>Three Modes</h3>
+            <ul>
+                <li><strong>Live Tag Match:</strong> Tag events in real-time during a live match and sync with video later</li>
+                <li><strong>Tag Uploaded Video:</strong> Import existing footage and tag events while watching</li>
+                <li><strong>Record & Tag Match:</strong> Record the match with your camera while tagging events simultaneously</li>
+            </ul>
+        </div>
+        
+        <div class="feature-box">
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Smart Tagging:</strong> One-tap tagging with speech-to-text for custom events</li>
+                <li><strong>Highlight Reels:</strong> Automatically generate video highlights from tagged events</li>
+                <li><strong>Multiple Sports:</strong> Pre-configured tags for soccer, basketball, and more</li>
+                <li><strong>Custom Tags:</strong> Create your own event types for any sport</li>
+                <li><strong>Beautiful Reports:</strong> Share professional event summaries</li>
+                <li><strong>Privacy First:</strong> All data and videos stored locally on your device</li>
+                <li><strong>Works Offline:</strong> Full functionality without internet connection</li>
+            </ul>
+        </div>
+        
+        <h2>Getting Started</h2>
+        
+        <h3>First Time Setup</h3>
+        <ol>
+            <li><strong>Choose Your Sport:</strong> Select your sport to get pre-configured event tags</li>
+            <li><strong>Grant Permissions:</strong> Allow camera, microphone, and speech recognition for full functionality</li>
+            <li><strong>Start Free Trial:</strong> Try all Pro features free for 14 days</li>
+        </ol>
+        
+        <h3>Live Tag Match Mode</h3>
+        <ol>
+            <li><strong>Select Sport:</strong> Choose your sport or use existing match data</li>
+            <li><strong>Start Match:</strong> Tap START when the match begins</li>
+            <li><strong>Tag Events:</strong> Tap event buttons or use speech-to-text for custom events</li>
+            <li><strong>Sync Video:</strong> After the match, import video to sync with your tags</li>
+            <li><strong>Create Highlights:</strong> Generate highlight reels from tagged events</li>
+        </ol>
+        
+        <h3>Tag Uploaded Video Mode</h3>
+        <ol>
+            <li><strong>Import Video:</strong> Select a video from your photo library</li>
+            <li><strong>Tag While Watching:</strong> Play the video and tag events as they happen</li>
+            <li><strong>Create Highlights:</strong> Generate highlight reels from your tags</li>
+        </ol>
+        
+        <h3>Record & Tag Match Mode</h3>
+        <ol>
+            <li><strong>Start Recording:</strong> Begin recording with your device camera</li>
+            <li><strong>Tag While Recording:</strong> Tag events in real-time as you record</li>
+            <li><strong>Review & Share:</strong> Watch your recording and create highlight reels</li>
+        </ol>
+        
         <h2>Frequently Asked Questions</h2>
-
+        
         <div class="faq-item">
-            <div class="faq-question">How do I tag events during a match?</div>
-            <div class="faq-answer">
-                <p>Simply tap the large "TAG" button when an event occurs. You'll be prompted to select an event type and add a description. The app automatically records the current match time.</p>
-            </div>
+            <h3>What's included in the free trial?</h3>
+            <p>The 14-day free trial includes full access to all Pro features: all three modes (Live Tag, Video Tag, Record & Tag), highlight reel creation, speech-to-text tagging, and all sports.</p>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">What are the three modes and when should I use them?</div>
-            <div class="faq-answer">
-                <ul>
-                    <li><strong>Live Tag Match:</strong> Use when you're watching a live match and want to tag events in real-time. You can sync with video later.</li>
-                    <li><strong>Record & Tag Match:</strong> Use when you want to record the match with your camera while tagging events simultaneously.</li>
-                    <li><strong>Tag Uploaded Video:</strong> Use when you have a video already recorded and want to tag events while watching playback.</li>
-                </ul>
-            </div>
+            <h3>What's the difference between Basic and Pro?</h3>
+            <p><strong>Basic Edition ($5.99):</strong> Live Tag Match mode only, all sports, unlimited events, and event sharing.</p>
+            <p><strong>Pro Edition ($14.99):</strong> All three modes, highlight reel creation, speech-to-text tagging, and all features.</p>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">How do I sync events with video?</div>
-            <div class="faq-answer">
-                <p>In Live Tag Match mode, after importing a video, go to the video player and tap the settings icon. Set the start time for each period (half/quarter) to match when that period begins in your video. The app will automatically sync all tagged events with the correct video timestamps.</p>
-            </div>
+            <h3>How do I create highlight reels?</h3>
+            <p>After tagging events in Video Tag or Record & Tag mode, tap "Create Highlight Reel" to automatically generate a video compilation of your tagged moments. You can select which events to include.</p>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">Can I change the sport after starting a match?</div>
-            <div class="faq-answer">
-                <p>No, sport selection is locked once a match has started. This ensures data consistency and prevents issues with event types, period terminology, and video synchronization. To change the sport, you'll need to reset the match first (which will clear all events).</p>
-            </div>
+            <h3>Can I use speech-to-text for custom events?</h3>
+            <p>Yes! In Pro Edition, tap the microphone button and speak your event description. The app will transcribe it and create a custom event tag.</p>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">How do I share my match events?</div>
-            <div class="faq-answer">
-                <p>After a match, go to the Events List and tap "Share Match Events". You can share via email, messages, social media, or any other sharing option available on your device.</p>
-            </div>
+            <h3>Can I edit or delete events?</h3>
+            <p>Yes! Tap "View Events" to see all recorded events. You can:</p>
+            <ul>
+                <li><strong>Edit events:</strong> Tap on an event to edit its description and time</li>
+                <li><strong>Delete individual events:</strong> Swipe left on any event and tap Delete</li>
+                <li><strong>Clear all events:</strong> Use the menu to clear all events for a fresh start</li>
+            </ul>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">Where is my data stored?</div>
-            <div class="faq-answer">
-                <p>All data is stored locally on your device. We don't collect or transmit any data to external servers. Your privacy is our priority.</p>
-            </div>
+            <h3>What sports are supported?</h3>
+            <p>MatchTagR comes with pre-configured tags for soccer/football, basketball, and other sports. You can also create custom tags for any sport.</p>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">Can I use MatchTagR offline?</div>
-            <div class="faq-answer">
-                <p>Yes! MatchTagR works completely offline. All features are available without an internet connection since all data is stored locally on your device.</p>
-            </div>
+            <h3>How do I sync video with live tags?</h3>
+            <p>After tagging events in Live Tag Match mode, tap "Sync Video" and import your match footage. The app will align your tags with the video timeline.</p>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">How do I delete events?</div>
-            <div class="faq-answer">
-                <p>In the Events List, swipe left on any event and tap "Delete". You can also delete all events by going to Settings and resetting the match.</p>
-            </div>
+            <h3>Is my data private?</h3>
+            <p>Absolutely! All data and videos are stored locally on your device. MatchTagR doesn't collect, transmit, or share any information. See our <a href="privacy-policy.html" style="color: #3DD64F;">Privacy Policy</a> for details.</p>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">What sports are supported?</div>
-            <div class="faq-answer">
-                <p>MatchTagR supports Football, AFL, Rugby, Netball, Cricket, American Football, Basketball, and Oztag. Each sport has customized event types and terminology.</p>
-            </div>
+            <h3>Does MatchTagR work offline?</h3>
+            <p>Yes! MatchTagR works completely offline. No internet connection required for any features.</p>
         </div>
-
+        
         <div class="faq-item">
-            <div class="faq-question">Can I customize the duration of periods?</div>
-            <div class="faq-answer">
-                <p>Yes! Go to Settings and select your preferred duration. Available options vary by sport and include common match lengths.</p>
-            </div>
+            <h3>Can I use this for multiple sports?</h3>
+            <p>Yes! You can switch between sports and create custom event tags for any sport you coach or follow.</p>
         </div>
-
-        <div class="contact-section">
-            <h2>Still Need Help?</h2>
-            <p>Can't find what you're looking for? We're here to help!</p>
-            <div class="contact-buttons">
-                <a href="mailto:support@matchtagr.com" class="contact-btn contact-btn-primary">Email Support</a>
-                <a href="mailto:feedback@matchtagr.com" class="contact-btn contact-btn-secondary">Send Feedback</a>
-            </div>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
-                We typically respond within 24-48 hours.
-            </p>
+        
+        <h2>Tips & Best Practices</h2>
+        <ul>
+            <li><strong>Use Live Tag mode at the field</strong> when you can't record video - sync footage later</li>
+            <li><strong>Record & Tag for instant analysis</strong> - perfect for training sessions</li>
+            <li><strong>Tag Uploaded Video for film study</strong> - analyze professional or opponent matches</li>
+            <li><strong>Create custom tags</strong> for your team's specific plays and tactics</li>
+            <li><strong>Use speech-to-text</strong> for quick custom events without typing</li>
+            <li><strong>Generate highlight reels</strong> to share with players after matches</li>
+            <li><strong>Keep your device charged</strong> - video recording uses battery quickly</li>
+        </ul>
+        
+        <h2>System Requirements</h2>
+        <ul>
+            <li>iOS 16.0 or later</li>
+            <li>iPhone or iPad</li>
+            <li>Camera access (for Record & Tag mode)</li>
+            <li>Microphone access (for speech-to-text and recording)</li>
+            <li>Photo library access (for importing and saving videos)</li>
+            <li>No internet connection required</li>
+        </ul>
+        
+        <h2>Pricing</h2>
+        <ul>
+            <li><strong>Free Trial:</strong> 14 days with full Pro access</li>
+            <li><strong>Basic Edition:</strong> $5.99 one-time purchase (Live Tag Match mode)</li>
+            <li><strong>Pro Edition:</strong> $14.99 one-time purchase (all modes and features)</li>
+            <li><strong>Upgrade:</strong> $8.99 to upgrade from Basic to Pro</li>
+        </ul>
+        <p>No subscriptions. No recurring charges. Buy once, use forever.</p>
+        
+        <div class="contact-box">
+            <h2>Need Help?</h2>
+            <p>Have questions, feedback, or found a bug?</p>
+            <p><strong>Email us at:</strong> team@digitalnomadstudio.io</p>
+            <p style="font-size: 0.9em; margin-top: 20px;">We typically respond within 24-48 hours</p>
+        </div>
+        
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 0.9em;">
+            <p><a href="privacy-policy.html" style="color: #3DD64F; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | <a href="index.html" style="color: #3DD64F; text-decoration: none; margin: 0 10px;">Home</a></p>
+            <p style="margin-top: 10px;">&copy; 2026 Digital Nomad Studio Pty Ltd. All rights reserved.</p>
         </div>
     </div>
 </body>
