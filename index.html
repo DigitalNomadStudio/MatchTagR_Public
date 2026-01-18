@@ -875,6 +875,278 @@
             }
         }
 
+        /* Watch Section */
+        .watch-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .watch-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 800px;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(61, 214, 79, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .watch-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .watch-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .watch-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .watch-feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.25rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid rgba(61, 214, 79, 0.1);
+            transition: all 0.3s;
+        }
+
+        .watch-feature-item:hover {
+            border-color: var(--tagr-green);
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(61, 214, 79, 0.15);
+        }
+
+        .watch-feature-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .watch-feature-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .watch-feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .watch-carousel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .watch-carousel {
+            position: relative;
+            width: 200px;
+            height: 280px;
+        }
+
+        .watch-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .watch-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .watch-frame {
+            width: 160px;
+            height: 195px;
+            background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 40px;
+            padding: 8px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 0 2px #333;
+            position: relative;
+        }
+
+        .watch-frame::before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 35px;
+            background: linear-gradient(145deg, #3a3a3a 0%, #2a2a2a 100%);
+            border-radius: 3px;
+        }
+
+        .watch-frame::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 30%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(145deg, #3a3a3a 0%, #2a2a2a 100%);
+            border-radius: 3px;
+        }
+
+        .watch-screen {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .watch-demo-content {
+            text-align: center;
+            padding: 0.5rem;
+            width: 100%;
+        }
+
+        .watch-caption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .watch-carousel-dots {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .watch-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .watch-dot.active {
+            background: var(--tagr-green);
+            transform: scale(1.2);
+        }
+
+        .watch-dot:hover {
+            background: var(--tagr-green-light);
+        }
+
+        .device-compatibility {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding: 1.5rem 2rem;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid rgba(61, 214, 79, 0.2);
+            flex-wrap: wrap;
+        }
+
+        .device-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(61, 214, 79, 0.1);
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .device-badge span:first-child {
+            font-size: 1.5rem;
+        }
+
+        .device-plus, .device-equals {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-weight: bold;
+        }
+
+        .device-result {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        @media (max-width: 900px) {
+            .watch-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .watch-carousel-container {
+                order: -1;
+            }
+
+            .watch-features {
+                gap: 1rem;
+            }
+
+            .watch-feature-item {
+                padding: 1rem;
+            }
+
+            .device-compatibility {
+                padding: 1.25rem;
+                gap: 0.75rem;
+            }
+
+            .device-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .device-badge span:first-child {
+                font-size: 1.25rem;
+            }
+
+            .device-result {
+                font-size: 1.1rem;
+            }
+        }
+
         /* Touch-friendly improvements */
         @media (hover: none) and (pointer: coarse) {
             .btn {
@@ -904,6 +1176,7 @@
         <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="#modes">Modes</a></li>
+            <li><a href="#watch">Watch</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#sports">Sports</a></li>
@@ -915,7 +1188,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Track Every Moment</h1>
-            <p class="subtitle">Professional sports event tracking across multiple sports. Three powerful modes for live matches, recording, and video analysis. <strong style="color: var(--tagr-green);">Try free for 7 days!</strong></p>
+            <p class="subtitle">Professional sports event tagging with sport-specific periods, highlight reels, three powerful modes, and an <strong style="color: var(--tagr-green);">Apple Watch companion app</strong> for hands-free tagging. <strong style="color: var(--tagr-green);">Try free for 7 days!</strong></p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/au/app/tagr/id6755271320" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Download on App Store</a>
                 <a href="https://play.google.com/store/apps/details?id=com.matchtagr.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get it on Google Play</a>
@@ -935,19 +1208,153 @@
             <div class="mode-card live fade-in-up">
                 <span class="mode-icon">⏱️</span>
                 <h3>Live Tag Match</h3>
-                <p>Tag events in real-time during a live match with precision timers. Start and stop periods with ease, then sync your tagged events with video later for comprehensive analysis.</p>
+                <p>Tag events in real time with sport-specific periods and dual timers. Start each period as play begins, then sync events with video later to build highlight reels.</p>
             </div>
 
             <div class="mode-card video fade-in-up">
                 <span class="mode-icon">🎬</span>
                 <h3>Tag Uploaded Video</h3>
-                <p>Import videos from your library and tag events while watching playback. Set period start times to perfectly sync events with video timestamps for detailed review.</p>
+                <p>Import a video from Photos, scrub and zoom playback (1x-4x), and tag events at the exact moment. Jump straight to any event for fast review.</p>
             </div>
 
             <div class="mode-card record fade-in-up">
                 <span class="mode-icon">📹</span>
                 <h3>Record & Tag Match</h3>
-                <p>Record the match with your camera while tagging events in real-time. Choose your video quality (720p, 1080p, 4K), pause/resume recording as needed, and tag events with accurate timestamps. Perfect for capturing both video and event data simultaneously.</p>
+                <p>Record the match with your camera while tagging on-screen event buttons. Auto-saves to Photos, supports portrait and landscape, and lets you review events without stopping the recording.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watch Companion App Section -->
+    <section id="watch" class="watch-section">
+        <div class="watch-container">
+            <h2 class="section-title">
+                <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 0.8em;">⌚</span> Apple Watch Companion
+                </span>
+            </h2>
+            <p class="section-subtitle">Tag events from your wrist without reaching for your phone</p>
+            
+            <div class="watch-content">
+                <div class="watch-features">
+                    <div class="watch-feature-item">
+                        <span class="watch-feature-icon">🎯</span>
+                        <div>
+                            <h4>Quick Event Tagging</h4>
+                            <p>Tap to tag with sport-specific events or use voice dictation for custom descriptions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="watch-feature-item">
+                        <span class="watch-feature-icon">⏱️</span>
+                        <div>
+                            <h4>Full Timer Control</h4>
+                            <p>Start, stop, and navigate periods directly from your Watch with confirmation prompts</p>
+                        </div>
+                    </div>
+                    
+                    <div class="watch-feature-item">
+                        <span class="watch-feature-icon">🔄</span>
+                        <div>
+                            <h4>Real-Time Sync</h4>
+                            <p>Elapsed and remaining time sync instantly between iPhone and Watch</p>
+                        </div>
+                    </div>
+                    
+                    <div class="watch-feature-item">
+                        <span class="watch-feature-icon">📋</span>
+                        <div>
+                            <h4>Recent Events Feed</h4>
+                            <p>See your latest tagged events on Watch, synced from iPhone</p>
+                        </div>
+                    </div>
+                    
+                    <div class="watch-feature-item">
+                        <span class="watch-feature-icon">🏈</span>
+                        <div>
+                            <h4>Sport-Aware</h4>
+                            <p>Automatically shows correct period names (Halves, Quarters, Periods) for your sport</p>
+                        </div>
+                    </div>
+                    
+                    <div class="watch-feature-item">
+                        <span class="watch-feature-icon">🎤</span>
+                        <div>
+                            <h4>Voice Dictation</h4>
+                            <p>Speak your event description hands-free for custom tags</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="watch-carousel-container">
+                    <div class="watch-carousel" id="watchCarousel">
+                        <div class="watch-slide active">
+                            <div class="watch-frame">
+                                <div class="watch-screen">
+                                    <div class="watch-demo-content">
+                                        <div style="font-size: 0.6rem; color: #888; margin-bottom: 0.3rem;">⚽ Football</div>
+                                        <div style="font-size: 0.7rem; color: #3DD64F; margin-bottom: 0.2rem;">1st Half</div>
+                                        <div style="font-size: 1.4rem; font-weight: bold; font-family: monospace;">12:34</div>
+                                        <div style="font-size: 0.65rem; color: #888; margin-top: 0.1rem;">32:26 remaining</div>
+                                        <div style="background: #3DD64F; color: black; padding: 0.4rem 0.8rem; border-radius: 8px; margin-top: 0.5rem; font-weight: bold; font-size: 0.8rem;">🎤 TAG</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="watch-caption">Live timer display with prominent TAG button</p>
+                        </div>
+                        <div class="watch-slide">
+                            <div class="watch-frame">
+                                <div class="watch-screen">
+                                    <div class="watch-demo-content">
+                                        <div style="font-size: 0.6rem; color: #888; margin-bottom: 0.3rem;">🏈 American Football</div>
+                                        <div style="font-size: 0.7rem; color: #3DD64F; margin-bottom: 0.2rem;">2nd Quarter</div>
+                                        <div style="font-size: 1.4rem; font-weight: bold; font-family: monospace;">05:42</div>
+                                        <div style="background: orange; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; margin-top: 0.4rem; font-size: 0.65rem;">Stop 2nd Quarter</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="watch-caption">Period controls with sport-specific terminology</p>
+                        </div>
+                        <div class="watch-slide">
+                            <div class="watch-frame">
+                                <div class="watch-screen">
+                                    <div class="watch-demo-content">
+                                        <div style="font-size: 0.7rem; color: #888; margin-bottom: 0.4rem;">Recent Events</div>
+                                        <div style="background: rgba(61,214,79,0.1); padding: 0.3rem 0.5rem; border-radius: 6px; margin-bottom: 0.25rem; font-size: 0.55rem; text-align: left;">
+                                            <span style="color: #3DD64F;">✓</span> 12:34 - Goal
+                                        </div>
+                                        <div style="background: rgba(61,214,79,0.1); padding: 0.3rem 0.5rem; border-radius: 6px; margin-bottom: 0.25rem; font-size: 0.55rem; text-align: left;">
+                                            <span style="color: #3DD64F;">✓</span> 10:15 - Shot
+                                        </div>
+                                        <div style="background: rgba(61,214,79,0.1); padding: 0.3rem 0.5rem; border-radius: 6px; font-size: 0.55rem; text-align: left;">
+                                            <span style="color: #3DD64F;">✓</span> 8:22 - Corner
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="watch-caption">Recent events synced from iPhone</p>
+                        </div>
+                    </div>
+                    <div class="watch-carousel-dots">
+                        <span class="watch-dot active" data-index="0"></span>
+                        <span class="watch-dot" data-index="1"></span>
+                        <span class="watch-dot" data-index="2"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="device-compatibility">
+                <div class="device-badge">
+                    <span>📱</span>
+                    <span>iPhone</span>
+                </div>
+                <span class="device-plus">+</span>
+                <div class="device-badge">
+                    <span>⌚</span>
+                    <span>Apple Watch</span>
+                </div>
+                <span class="device-equals">=</span>
+                <div class="device-result">Seamless Tagging</div>
             </div>
         </div>
     </section>
@@ -962,73 +1369,73 @@
                 <div class="feature-card fade-in-up">
                     <span class="feature-icon">🏆</span>
                     <h3>Multi-Sport Support</h3>
-                    <p>Works with Football, AFL, Rugby, Netball, Cricket, American Football, Basketball, and Oztag. Each sport has unique, customisable event tags and terminology tailored to the game.</p>
+                    <p>Choose Football, AFL, Rugby, Netball, American Football, Basketball, Oztag, or Ice Hockey. Each sport uses its own period structure and terminology.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <span class="feature-icon">🏷️</span>
+                    <h3>Sport-Specific Event Tags</h3>
+                    <p>Each sport includes 12 event types plus custom tags. Enable only the buttons you need for quick, accurate tagging.</p>
                 </div>
 
                 <div class="feature-card fade-in-up">
                     <span class="feature-icon">🎤</span>
                     <h3>Speech-to-Text Tagging</h3>
-                    <p>Speak custom event descriptions hands-free so coaches can keep their eyes on the game. Perfect for capturing detailed observations without interrupting your focus on the match.</p>
+                    <p>Speak custom event descriptions hands-free so you can keep your eyes on the action.</p>
                 </div>
 
                 <div class="feature-card fade-in-up">
-                    <span class="feature-icon">🏷️</span>
-                    <h3>Sport-Specific Custom Tags</h3>
-                    <p>Each sport features unique event tags that can be fully customised. Enable or disable tags, with up to 12 active at once. Create your own tags to match your coaching style.</p>
+                    <span class="feature-icon">⏱️</span>
+                    <h3>Adaptive Timers & Periods</h3>
+                    <p>Halves, thirds, quarters, or periods with adjustable durations, plus dual elapsed and remaining timers.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <span class="feature-icon">🎬</span>
+                    <h3>Video Tagging & Navigation</h3>
+                    <p>Import videos from Photos, tag events at the exact moment, and jump to any event instantly for review.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <span class="feature-icon">🔍</span>
+                    <h3>Zoomable Playback</h3>
+                    <p>Pinch to zoom (1x-4x), pan, and double-tap to toggle zoom while reviewing footage in portrait or landscape.</p>
                 </div>
 
                 <div class="feature-card fade-in-up">
                     <span class="feature-icon">📹</span>
-                    <h3>Recording Overlays</h3>
-                    <p>Real-time on-screen overlays during recording show elapsed time, recording quality, and tagged events. Stay informed without interrupting your recording workflow.</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <span class="feature-icon">📊</span>
-                    <h3>Event Timeline</h3>
-                    <p>View all tagged events in chronological order with match and video timestamps. Jump to any event in your video instantly for quick review and analysis.</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <span class="feature-icon">🎥</span>
-                    <h3>Video Synchronisation</h3>
-                    <p>Set period start times to perfectly sync your tagged events with video playback. Works seamlessly with imported videos for accurate post-match analysis.</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <span class="feature-icon">✂️</span>
-                    <h3>Highlight Reels</h3>
-                    <p>Automatically create highlight packages from your tagged events. Generate professional clips for each event with one tap - perfect for sharing key moments with players and parents.</p>
+                    <h3>Record & Tag Camera Mode</h3>
+                    <p>Record matches with your device camera while tagging in real time. Videos save automatically to Photos.</p>
                 </div>
 
                 <div class="feature-card fade-in-up">
                     <span class="feature-icon">⏸️</span>
                     <h3>Pause & Resume Recording</h3>
-                    <p>Pause and resume recording as needed during matches. Timestamps remain accurate across segments, and videos merge seamlessly into one complete match file.</p>
+                    <p>Pause and resume recording as needed during long sessions. Timestamps stay accurate across segments.</p>
                 </div>
 
                 <div class="feature-card fade-in-up">
-                    <span class="feature-icon">🎬</span>
+                    <span class="feature-icon">🎞️</span>
                     <h3>Flexible Video Quality</h3>
-                    <p>Choose your recording quality: 720p HD for storage efficiency, 1080p Full HD for standard quality, or 4K Ultra HD for maximum detail. Quality displayed during recording.</p>
+                    <p>Choose 720p, 1080p, or 4K recording quality based on storage and detail needs.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <span class="feature-icon">✂️</span>
+                    <h3>Highlight Reels</h3>
+                    <p>Automatically create clips around each event using adjustable pre- and post-tag buffers.</p>
                 </div>
 
                 <div class="feature-card fade-in-up">
                     <span class="feature-icon">📤</span>
-                    <h3>Share & Export</h3>
-                    <p>Generate professional event reports with match statistics and share them via email, messages, or social media. Perfect for post-match analysis and team communication.</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <span class="feature-icon">⚡</span>
-                    <h3>Precision Timers</h3>
-                    <p>Real-time tracking with start/stop controls for each period. Track elapsed and remaining time with accuracy to match official game timing.</p>
+                    <h3>Share Event Reports</h3>
+                    <p>Create a polished match summary image with team names and event timelines, ready for sharing.</p>
                 </div>
 
                 <div class="feature-card fade-in-up">
                     <span class="feature-icon">🔒</span>
                     <h3>Privacy First</h3>
-                    <p>All data stored locally on your device. Your match data stays private and secure - no cloud uploads unless you choose to share.</p>
+                    <p>Your match data stays on device. Share only what you choose.</p>
                 </div>
             </div>
         </div>
@@ -1150,7 +1557,7 @@
             </div>
             <div class="sport-item">
                 <div class="sport-icon">🏏</div>
-                <div class="sport-name">Cricket</div>
+                <div class="sport-name">Ice Hockey</div>
             </div>
             <div class="sport-item">
                 <div class="sport-icon">🏈</div>
@@ -1184,6 +1591,7 @@
         <div class="footer-content">
             <div class="footer-links">
                 <a href="#modes">Modes</a>
+                <a href="#watch">Watch App</a>
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#sports">Sports</a>
@@ -1303,6 +1711,50 @@
             }
             lastTouchEnd = now;
         }, false);
+
+        // Watch Carousel
+        const watchSlides = document.querySelectorAll('.watch-slide');
+        const watchDots = document.querySelectorAll('.watch-dot');
+        let currentWatchSlide = 0;
+        let watchAutoPlay;
+
+        function showWatchSlide(index) {
+            watchSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            watchDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentWatchSlide = index;
+        }
+
+        function nextWatchSlide() {
+            const next = (currentWatchSlide + 1) % watchSlides.length;
+            showWatchSlide(next);
+        }
+
+        // Auto-play carousel
+        function startWatchAutoPlay() {
+            watchAutoPlay = setInterval(nextWatchSlide, 4000);
+        }
+
+        function stopWatchAutoPlay() {
+            clearInterval(watchAutoPlay);
+        }
+
+        // Click on dots to navigate
+        watchDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopWatchAutoPlay();
+                showWatchSlide(index);
+                startWatchAutoPlay();
+            });
+        });
+
+        // Start auto-play
+        if (watchSlides.length > 0) {
+            startWatchAutoPlay();
+        }
     </script>
 </body>
 </html>
